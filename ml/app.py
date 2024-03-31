@@ -1,4 +1,4 @@
-from flask import *
+from flask import Flask, request, jsonify
 import json, time
 from PIL import Image
 import cv2
@@ -101,6 +101,7 @@ def home_page():
 def riddle_generator():
     data = request.json
     location = data["location"]
+    print(location)
     res = "riddle"
     return jsonify({"message": "Data processed successfully", "result": res})
 

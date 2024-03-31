@@ -1,0 +1,53 @@
+import { z } from 'zod';
+
+export enum AttractionsEnum {
+    HEARST_CASTLE = "Hearst Castle",
+    SIKH_GURDWARA_SAN_JOSE = "Sikh Gurdwara San Jose",
+    STATUE_OF_TRAN_QUOC_TUAN = "Statue of Trần Quốc Tuấn",
+    THE_TECH_INTERACTIVE = "The Tech Interactive",
+    WINCHESTER_MYSTERY_HOUSE = "Winchester Mystery House",
+    BURRELL_SCHOOL_VINEYARD_AND_WINERY = "Burrell School Vineyard and Winery",
+    LAKE_CUNNINGHAM_SKATE_PARK = "Lake Cunningham Skate Park",
+    SAN_JOSE_MUSEUM_OF_QUILTS_AND_TEXTILES = "San Jose Museum of Quilts & Textiles",
+    ROSICRUCIAN_EGYPTIAN_MUSEUM = "Rosicrucian Egyptian Museum",
+    JAPANESE_AMERICAN_MUSEUM_OF_SAN_JOSE = "Japanese American Museum of San Jose",
+    SAN_PEDRO_SQUARE_MARKET_BAR = "San Pedro Square Market Bar",
+    JAPANESE_FRIENDSHIP_GARDEN = "Japanese Friendship Garden",
+    VIET_MUSEUM = "Viet Museum",
+    MEXICAN_HERITAGE_PLAZA = "Mexican Heritage Plaza",
+    CATHEDRAL_BASILICA_OF_ST_JOSEPH = "Cathedral Basilica of St. Joseph",
+    THE_ALAMEDA_ARTWORKS = "The Alameda Artworks",
+    PERALTA_ADOBE_AND_FALLON_HOUSE = "Peralta Adobe and Fallon House",
+    LICK_OBSERVATORY = "Lick Observatory",
+    NASA_AMES_RESEARCH_CENTER = "NASA Ames Research Center",
+    HAKONE_GARDENS = "Hakone Gardens",
+    COMPUTER_HISTORY_MUSEUM = "Computer History Museum",
+    OLYMPIC_BLACK_POWER_STATUE = "Olympic Black Power Statue",
+}
+
+export const AttractionsEnumSchema = z.enum(
+    [
+        AttractionsEnum.HEARST_CASTLE,
+        AttractionsEnum.SIKH_GURDWARA_SAN_JOSE,
+        AttractionsEnum.STATUE_OF_TRAN_QUOC_TUAN,
+        AttractionsEnum.THE_TECH_INTERACTIVE,
+        AttractionsEnum.WINCHESTER_MYSTERY_HOUSE,
+        AttractionsEnum.BURRELL_SCHOOL_VINEYARD_AND_WINERY,
+        AttractionsEnum.LAKE_CUNNINGHAM_SKATE_PARK,
+        AttractionsEnum.SAN_JOSE_MUSEUM_OF_QUILTS_AND_TEXTILES,
+        AttractionsEnum.ROSICRUCIAN_EGYPTIAN_MUSEUM,
+        AttractionsEnum.JAPANESE_AMERICAN_MUSEUM_OF_SAN_JOSE,
+        AttractionsEnum.SAN_PEDRO_SQUARE_MARKET_BAR,
+        AttractionsEnum.JAPANESE_FRIENDSHIP_GARDEN,
+        AttractionsEnum.VIET_MUSEUM,
+        AttractionsEnum.MEXICAN_HERITAGE_PLAZA,
+        AttractionsEnum.CATHEDRAL_BASILICA_OF_ST_JOSEPH,
+        AttractionsEnum.THE_ALAMEDA_ARTWORKS,
+        AttractionsEnum.PERALTA_ADOBE_AND_FALLON_HOUSE,
+        AttractionsEnum.LICK_OBSERVATORY,
+        AttractionsEnum.NASA_AMES_RESEARCH_CENTER,
+        AttractionsEnum.HAKONE_GARDENS,
+        AttractionsEnum.COMPUTER_HISTORY_MUSEUM,
+        AttractionsEnum.OLYMPIC_BLACK_POWER_STATUE,
+    ]
+)

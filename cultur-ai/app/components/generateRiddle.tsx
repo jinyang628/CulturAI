@@ -1,12 +1,12 @@
 "use client"
 
-import testAPI from "../api/test";
+import generateRiddle from "../api/generateRiddle";
 
-export default function Button() {
+export default function GenerateRiddleButton() {
 
     const handleClick = () => {
       // Define what you want to happen on click
-      testAPI();
+      generateRiddle();
     };
   
     return (

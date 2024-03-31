@@ -1,5 +1,10 @@
 ## Getting Started!
 
+### Create .env file
+
+Duplicate the contents of `.env.example` and name it `.env` 
+
+
 ### Create a virtual environment if you have yet to.
 
 ```
