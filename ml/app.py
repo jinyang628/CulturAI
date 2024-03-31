@@ -1,3 +1,4 @@
+import base64
 from flask import Flask, request, jsonify
 import json, time
 from PIL import Image
@@ -101,7 +102,6 @@ def home_page():
 def riddle_generator():
     data = request.json
     location = data["location"]
-    print(location)
     res = "riddle"
     return jsonify({"message": "Data processed successfully", "result": res})
 
@@ -114,12 +114,20 @@ def hint_generator():
 
     return jsonify({"message": "Data processed successfully", "result": res})
 
-@app.route('/image_classifier', methods = ['POST'])
+@app.route('/image_classifier/', methods = ['POST'])
 def image_classifier():
-    data = request.json
+
+    location = request.form.get('location')
+    image_file = request.files.get('image')
+    print(location)
+    image_bytes = image_file.read()
+    print(image_bytes)
+    # reset pointer to top of image to to read it again/calclate bytes, etc.
+    image_file.seek(0)
+    print(f"Received image: {image_file.filename}, size: {len(image_file.read())} bytes")
+
     # Your data processing logic here...
     # res = generate_text_demo(f"""{data["input"]}""")
-    location = data["location"]
 
     res = "true"
 
@@ -127,18 +135,29 @@ def image_classifier():
     return jsonify({"message": "Data processed successfully", "result": res})
 
 
-@app.route('/image_translator', methods = ['POST'])
+@app.route('/image_translator/', methods = ['POST'])
 def image_translator():
-    data = request.json
-    data["image"] = image
+
+    style = request.form.get('style')
+    image_file = request.files.get('image')
+    print(style)
+    image_bytes = image_file.read()
+    print(image_bytes)
+    # reset pointer to top of image to to read it again/calclate bytes, etc.
+    image_file.seek(0)
+    print(f"Received image: {image_file.filename}, size: {len(image_file.read())} bytes")
+
     # Your data processing logic here...
     # res = generate_text_demo(f"""{data["input"]}""")
 
-    res = load_image_as_bytes("images/golden_gate.jpg") 
+    image_path = "images/golden_gate.jpg"
+    with open(image_path, "rb") as image_file:
+        image_bytes = image_file.read()
+        encoded_image = base64.b64encode(image_bytes).decode('utf-8')
 
 
     # Return the response in JSON format
-    return jsonify({"message": "Data processed successfully", "result": res})
+    return jsonify({"message": "Data processed successfully", "result": encoded_image})
 
 
 
