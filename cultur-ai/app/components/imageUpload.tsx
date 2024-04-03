@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 
 export default function ImageUpload({
+  title,
   onImageSelected,
 }: {
+  title: string;
   onImageSelected: (img: File) => void;
 }) {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -16,36 +18,27 @@ export default function ImageUpload({
   };
 
   return (
-    // <div>
-    //   <input type="file" accept="image/*" onChange={handleImageChange} />
-    //   {selectedImage && (
-    //     <img
-    //       src={URL.createObjectURL(selectedImage)}
-    //       alt="Selected"
-    //       style={{ height: "200px" }}
-    //     />
-    //   )}
-    // </div>
-    <div>
+    <div className="flex flex-col w-full gap-2">
       <label
         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
         form="file_input"
       >
-        Upload file
+        {title}
       </label>
       <input
         onChange={handleImageChange}
-        className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-        id="file_input"
+        className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"                
         type="file"
       />
-      {selectedImage && (
-        <img
-          src={URL.createObjectURL(selectedImage)}
-          alt="Selected"
-          style={{ height: "200px" }}
-        />
-      )}
+      <div className="flex w-full justify-center items-center">
+        {selectedImage && (
+          <img
+            className="max-h-[200px]"
+            src={URL.createObjectURL(selectedImage)}
+            alt="Selected"
+          />
+        )}
+      </div>
     </div>
   );
 }
