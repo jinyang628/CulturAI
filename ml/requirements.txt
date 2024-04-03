@@ -1,3 +1,8 @@
 flask
 diffusers
 opencv-python
+transformers
+bitsandbytes
+accelerate
+keras
+scikit-learn
