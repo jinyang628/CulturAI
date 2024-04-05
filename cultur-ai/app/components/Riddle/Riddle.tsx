@@ -73,76 +73,87 @@ export default function Riddle() {
   };
 
   return (
-    <div className="flex w-full bg-black flex-col items-center justify-center p-4 h-full">
-      <div className="w-full text-left">
-        <h1>RIDDLE</h1>
-        {riddle}
-        <h1>HINT</h1>
-        {riddleHint}
-      </div>
-
-      <Button
-        handleClick={handleGenerateRiddle}
-        buttonType={ButtonType.RIDDLE_BUTTON}
-        label="Generate Riddle"
-      />
-
-      <Button
-        handleClick={handleGenerateRiddleHint}
-        buttonType={ButtonType.RIDDLE_BUTTON}
-        label="Get Hint"
-      />
-      <div className="w-[70%] flex justify-center items-center flex-col gap-5 mt-8">
-        <ImageUpload
-          title="Upload Image for validation"
-          onImageSelected={(imageFile: any) => {
-            setUploadedValidationImage(imageFile);
-          }}
+    <div className="w-full flex flex-col gap-5">
+      <div className="text-3xl font-bold">Riddles</div>
+      <div className="justify-center items-center w-full flex flex-col">
+        <div className="w-full text-left">
+          {riddle && (
+            <div className="chat chat-start animate-fadeIn">
+              <div className="chat-bubble">{riddle}</div>
+            </div>
+          )}
+          {riddleHint && (
+            <div className="chat chat-end animate-fadeIn">
+              <div className="chat-bubble">{riddleHint}</div>
+            </div>
+          )}
+        </div>
+        <div>
+          
+        </div>
+        <Button
+          handleClick={handleGenerateRiddle}
+          buttonType={ButtonType.RIDDLE_BUTTON}
+          label="Generate Riddle"
         />
 
-        {uploadedValidationImage && (
-          <Button
-            handleClick={() =>
-              handleValidateImage(
-                uploadedValidationImage,
-                AttractionsEnum.BURRELL_SCHOOL_VINEYARD_AND_WINERY
-              )
-            }
-            buttonType={ButtonType.IMAGE_ACTION_BUTTON}
-            label="Validate Image"
+        <Button
+          handleClick={handleGenerateRiddleHint}
+          buttonType={ButtonType.RIDDLE_BUTTON}
+          label="Get Hint"
+        />
+        <div className="w-[70%] flex justify-center items-center flex-col gap-5 mt-8">
+          <ImageUpload
+            title="Upload Image for validation"
+            onImageSelected={(imageFile: any) => {
+              setUploadedValidationImage(imageFile);
+            }}
           />
-        )}
-        <ImageUpload
-          title="Upload Image to transform"
-          onImageSelected={(imageFile: any) => {
-            setUploadedTransformationImage(imageFile);
-          }}
-        />
-        <input
-          type="text"
-          value={textForTransformation}
-          onChange={(event) =>
-            setTextForTransformation(event.currentTarget.value)
-          }
-          className="w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="Enter description"
-        />
 
-        {uploadedTransformationImage && (
-          <Button
-            handleClick={() =>
-              handleTransformImage({
-                style: "impressionism",
-                image: uploadedTransformationImage,
-              })
-            }
-            disabled={textForTransformation === ""}
-            buttonType={ButtonType.IMAGE_ACTION_BUTTON}
-            label="Transform Image!"
+          {uploadedValidationImage && (
+            <Button
+              handleClick={() =>
+                handleValidateImage(
+                  uploadedValidationImage,
+                  AttractionsEnum.BURRELL_SCHOOL_VINEYARD_AND_WINERY
+                )
+              }
+              buttonType={ButtonType.IMAGE_ACTION_BUTTON}
+              label="Validate Image"
+            />
+          )}
+          <ImageUpload
+            title="Upload Image to transform"
+            onImageSelected={(imageFile: any) => {
+              setUploadedTransformationImage(imageFile);
+            }}
           />
-        )}
+          <input
+            type="text"
+            value={textForTransformation}
+            onChange={(event) =>
+              setTextForTransformation(event.currentTarget.value)
+            }
+            className="w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Enter description"
+          />
 
-        {transformedImage && <img src={transformedImage} alt="Transformed" />}
+          {uploadedTransformationImage && (
+            <Button
+              handleClick={() =>
+                handleTransformImage({
+                  style: "impressionism",
+                  image: uploadedTransformationImage,
+                })
+              }
+              disabled={textForTransformation === ""}
+              buttonType={ButtonType.IMAGE_ACTION_BUTTON}
+              label="Transform Image!"
+            />
+          )}
+
+          {transformedImage && <img src={transformedImage} alt="Transformed" />}
+        </div>
       </div>
     </div>
   );
