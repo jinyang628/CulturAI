@@ -30,7 +30,8 @@ export default function Header() {
         </div>
       </div>
       <div className="navbar-center">
-        <a className="btn btn-ghost text-xl">Cultur-ai</a>
+        <img width="130px" src="../../CulturAI-logo.png"></img>
+        
       </div>
       <div className="navbar-end">
         <button className="btn btn-ghost btn-circle">

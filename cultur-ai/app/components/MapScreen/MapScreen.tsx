@@ -7,7 +7,7 @@ import {
 } from "@react-google-maps/api";
 
 const containerStyle = {
-  width: "350px",
+  width: "100%",
   height: "400px",
 };
 
@@ -29,7 +29,7 @@ export default function MapScreen() {
     {
       position: { lat: 37.3356, lng: -121.914 },
       label: {
-        text: "Rosicrucian Egyptian Museum",
+        text: " ",
         color: "black",
         fontWeight: "bold",
       },
@@ -38,7 +38,7 @@ export default function MapScreen() {
     {
       position: { lat: 37.3183, lng: -121.9513 },
       label: {
-        text: "Winchester Mystery House",
+        text: " ",
         color: "black",
         fontWeight: "bold",
       },
@@ -46,7 +46,7 @@ export default function MapScreen() {
     {
       position: { lat: 37.3384, lng: -121.8855 },
       label: {
-        text: "Plaza de la Cultura",
+        text: " ",
         color: "black",
         fontWeight: "bold",
       },
@@ -58,11 +58,17 @@ export default function MapScreen() {
         color: "black",
         fontWeight: "bold",
       },
+      icon: {
+        url: "https://img.icons8.com/color/35/region-code.png",
+        labelOrigin: new google.maps.Point(75, 32),
+        size: new google.maps.Size(32, 32),
+        anchor: new google.maps.Point(16, 32),
+      },
     },
     {
       position: { lat: 37.3199, lng: -121.9482 },
       label: {
-        text: "Santana Row",
+        text: " ",
         color: "black",
         fontWeight: "bold",
       },
@@ -70,7 +76,7 @@ export default function MapScreen() {
     {
       position: { lat: 37.3257, lng: -121.8786 },
       label: {
-        text: "Japanese Friendship Garden",
+        text: " ",
         color: "black",
         fontWeight: "bold",
       },
@@ -82,11 +88,17 @@ export default function MapScreen() {
         color: "black",
         fontWeight: "bold",
       },
+      icon: {
+        url: "https://img.icons8.com/color/35/region-code.png",
+        labelOrigin: new google.maps.Point(75, 32),
+        size: new google.maps.Size(32, 32),
+        anchor: new google.maps.Point(16, 32),
+      },
     },
     {
       position: { lat: 37.3317, lng: -121.8907 },
       label: {
-        text: "Tech Interactive",
+        text: " ",
         color: "black",
         fontWeight: "bold",
       },
@@ -98,21 +110,13 @@ export default function MapScreen() {
         color: "black",
         fontWeight: "bold",
       },
-    },
-    {
-      position: { lat: 37.1755, lng: -121.8375 },
-      label: {
-        text: "?",
-        color: "black",
-        fontWeight: "bold",
-      },
       icon: {
-        url: "https://img.icons8.com/ios-glyphs/30/lock--v1.png",
+        url: "https://img.icons8.com/color/35/region-code.png",
         labelOrigin: new google.maps.Point(75, 32),
         size: new google.maps.Size(32, 32),
         anchor: new google.maps.Point(16, 32),
       },
-    },
+    },  
   ];
 
   const getMarkers = () => {
@@ -125,7 +129,7 @@ export default function MapScreen() {
           marker.icon
             ? marker.icon
             : {
-                url: "https://img.icons8.com/color/35/region-code.png",
+                url: "https://img.icons8.com/ios-glyphs/30/lock--v1.png",
                 labelOrigin: new google.maps.Point(75, 32),
                 size: new google.maps.Size(32, 32),
                 anchor: new google.maps.Point(16, 32),
@@ -136,7 +140,7 @@ export default function MapScreen() {
   };
 
   return (
-    <div className="w-full flex flex-col gap-5">
+    <div className="w-full flex flex-col gap-5 pb-8">
       <div className="text-3xl font-bold">Around your neighbourhood</div>
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
         {getMarkers()}

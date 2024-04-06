@@ -13,7 +13,6 @@ function getRandomEnumValue<T extends object>(anEnum: T): T[keyof T] {
   }
 
 export default async function generateRiddle() {
-    // const randomAttraction = getRandomEnumValue(AttractionsEnum);
     const randomAttraction = AttractionsEnum.HEARST_CASTLE;
     const response = await axios.post( 
         `${API_URL}/api/generate_riddle`,

@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <div className="flex w-full bg-black flex-col items-center justify-center h-full">
       <Header />
-      <div className="pt-20 h-[100vh] px-4 mt-5">
+      <div className="pt-20 min-h-[100vh] px-4 mt-5">
         {activeAppSection === AppSection.HOME && <HomeScreen />}
         {activeAppSection === AppSection.MAP && <MapScreen />}
         {activeAppSection === AppSection.AR && <AR />}
