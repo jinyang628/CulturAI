@@ -26,7 +26,7 @@ export default function Riddle() {
 
   const handleGenerateRiddleHint = async () => {
     const riddleHint = await getHint(
-      AttractionsEnum.BURRELL_SCHOOL_VINEYARD_AND_WINERY
+      AttractionsEnum.HEARST_CASTLE
     );
     setRiddleHint(riddleHint.data);
   };

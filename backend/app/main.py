@@ -45,7 +45,6 @@ async def get_hint(attraction: Attraction):
 
 @app.post("/api/validate_image")
 async def validate_image(attraction: str = Form(...), image: UploadFile = File(...)):
-
     # Do something with the attraction and image
     response: ValidateImageResponse = await send_validate_image_request(location=attraction, image=image)
     isCorrectLocation: str = response["result"]
