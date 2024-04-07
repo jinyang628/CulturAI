@@ -69,33 +69,7 @@ export default function Navbar({
             </g>
           </svg>
         </div>
-        <div onClick={() => setActiveAppSection(AppSection.AR)} className="flex aspect-square min-h-[32px] w-13 flex-col items-center justify-center gap-1 rounded-md p-1.5  text-indigo-600  dark:text-sky-50">
-          <svg
-            width="256px"
-            height="256px"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            stroke="#000000"
-          >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g
-              id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></g>
-            <g id="SVGRepo_iconCarrier">
-              {" "}
-              <path
-                d="M7 9.5L12 12M7 9.5V14.5L12 17M7 9.5L12 7L17 9.5M12 12L17 9.5M12 12V17M17 9.5V14.5L12 17M8 4H6C4.89543 4 4 4.89543 4 6V8M8 20H6C4.89543 20 4 19.1046 4 18V16M16 4H18C19.1046 4 20 4.89543 20 6V8M16 20H18C19.1046 20 20 19.1046 20 18V16"
-                stroke={`${activeAppSection === AppSection.AR ? "#9333ea" : "#ffffff" }`}
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>{" "}
-            </g>
-          </svg>
-        </div>
+    
         <div onClick={() => setActiveAppSection(AppSection.RIDDLE)} className="flex aspect-square min-h-[32px] w-13 flex-col items-center justify-center gap-1 rounded-md p-1.5  text-indigo-600  dark:text-sky-50">
           <svg
             width="256px"

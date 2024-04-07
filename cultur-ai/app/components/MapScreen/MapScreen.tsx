@@ -8,7 +8,8 @@ import {
 
 const containerStyle = {
   width: "100%",
-  height: "400px",
+  height: "400px",  
+  borderRadius: "25px"
 };
 
 export default function MapScreen() {
@@ -150,7 +151,7 @@ export default function MapScreen() {
         <div className="relative">
           <img
             src="https://daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg"
-            className="rounded w-full"
+            className=" rounded-3xl w-full"
           />
           <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
             <p className="text-white text-xl font-bold px-5 text-center">
